@@ -158,7 +158,7 @@ export default function Page() {
               <h2 className="font-medium text-xl mb-1 tracking-tighter">{item.name}</h2>
               <a className="flex items-center hover:text-neutral-600 dark:hover:text-neutral-100 transition-all" href={item.link} target="_blank">
                 <ArrowIcon/>
-                <p className="ml-1">view</p>
+                <p className="ml-1">project link</p>
               </a>
             </div>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm -mt-1">
