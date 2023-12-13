@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     default: 'Isaac D. Arcilla',
     template: '%s — Isaac D. Arcilla',
   },
-  description: 'Developer, writer, and creator.',
+  description: 'I am working as a Software Engineer based in the Philippines passionately designing and building software applications.',
   openGraph: {
     title: 'Isaac D. Arcilla',
-    description: 'Developer, writer, and creator.',
+    description: 'I am working as a Software Engineer based in the Philippines passionately designing and building software applications.',
     url: 'https://isaacdarcilla.com',
     siteName: 'Isaac D. Arcilla',
     locale: 'en_US',
