@@ -22,7 +22,7 @@ export default function Page() {
         </p>
         <p>
           The role involves collaborating with a project team to create and sustain web applications
-          using React.js, Laravel, and GraphQL. Responsibilities include writing clean,
+          using React.js, TypeScript, PHP, Laravel, Shopify, Sanity CMS, and GraphQL. Responsibilities include writing clean,
           well-documented code, optimizing applications for speed and scalability,
           managing APIs, and ensuring responsive design across devices and browsers.
           Collaboration with UI/UX teams is crucial for an intuitive user interface.
