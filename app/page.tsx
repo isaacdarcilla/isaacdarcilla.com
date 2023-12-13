@@ -30,7 +30,7 @@ export default function Page() {
         </Link> and much more.
       </p>
 
-      <p  className="prose prose-neutral dark:prose-invert mt-3"> I enjoy dedicating my free time to various pursuits, including crafting engaging blog posts, contributing to open-source projects, coding, and indulging in the serene pastime of fishing.</p>
+      <p  className="prose prose-neutral dark:prose-invert mt-4"> I enjoy dedicating my free time to various pursuits, including crafting engaging blog posts, contributing to open-source projects, coding, and indulging in the serene pastime of fishing.</p>
 
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
