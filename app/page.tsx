@@ -7,7 +7,7 @@ export default function Page() {
       <Image src="/avatar.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
       <h1 className="font-medium text-2xl mb-6 tracking-normal">isaac d. arcilla</h1>
       <p className="prose prose-neutral dark:prose-invert">
-        I'm a fullstack developer, optimist, and community builder.
+        I'm a fullstack developer, optimist, and open-source contrubitor.
         I currently <Link href="/work">work</Link> as the Senior Software Engineer at <Link href="/work">Doodl</Link>, a New Zealand based company.
         I have five years of experience in web development, working with various frameworks, languages, and tools.
         I have proven expertise in developing and maintaining high-quality user interfaces, using technologies
