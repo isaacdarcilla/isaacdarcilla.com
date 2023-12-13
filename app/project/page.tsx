@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: 'Projects',
+  title: 'Project',
   description: 'Projects handled over the years.',
 };
 function ArrowIcon() {
