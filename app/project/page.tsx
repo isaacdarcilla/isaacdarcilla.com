@@ -46,7 +46,7 @@ const projects = [
   },
   {
     name: "SchoolAide",
-    description: "SchoolAide stands as a dedicated Software as a Service platform meticulously designed to meet the unique requirements of both public and private schools in the Philippines. It serves as a catalyst, streamlining administrative tasks and elevating the overall efficiency of educational institutions. In my capacity as the Lead Developer for this project, I spearheaded a team of two members, overseeing the project from its initial planning stages to deployment. Currently, SchoolAide is actively utilized by 16 schools across the Philippines, benefiting over 20,000 faculties and students. The platform has successfully become an integral tool in the educational landscape, contributing to the seamless operation of schools and enhancing the academic experience for both educators and learners. Below are the links to all the schools that uses this project.",
+    description: "SchoolAide stands as a dedicated Software as a Service platform meticulously designed to meet the unique requirements of both public and private schools in the Philippines. It serves as a catalyst, streamlining administrative tasks and elevating the overall efficiency of educational institutions. In my capacity as the Lead Developer for this project, I spearheaded a team of two members, overseeing the project from its initial planning stages to deployment. Currently, SchoolAide is actively utilized by 16 schools across the Philippines, benefiting over 20,000 faculties and students. The platform has successfully become an integral tool in the educational landscape, contributing to the seamless operation of schools and enhancing the academic experience for both educators and learners. Below are the links to all the schools that uses this project:",
     location: "Rakso Creative Technology, Inc., Philippines",
     link: "https://app.schoolaide.xyz/",
     links: [
@@ -104,7 +104,7 @@ const projects = [
       },
       {
         "domain": "https://schoolaide.spcpasig.edu.ph",
-        "sub_domain": "St. Paul Pasig"
+        "sub_domain": "St. Paul College Pasig"
       },
       {
         "domain": "https://stcs.schoolaide.xyz",
