@@ -144,12 +144,73 @@ const projects = [
     link: "https://oas.catsu.edu.ph/",
     links: [],
   },
+  {
+    name: "Select Philippines Address",
+    description: "An open-source project and NPM package written in JavaScript facilitating promise-based address selection for locations in the Philippines.",
+    location: "Open Source Project",
+    link: "https://github.com/isaacdarcilla/select-philippines-address",
+    links: [
+      {
+        "domain": "https://github.com/isaacdarcilla/select-philippines-address",
+        "sub_domain": "Github Repository"
+      },
+      {
+        "domain": "https://www.npmjs.com/package/select-philippines-address",
+        "sub_domain": "NPM Package"
+      },
+      {
+        "domain": "https://select-philippines-address.vercel.app",
+        "sub_domain": "Demonstration"
+      }
+    ],
+  },
+  {
+    name: "Filipino Script Translator",
+    description: "An open-source project that utilizes TypeScript to translate provided text into Baybayin, Buhid, Hanunoo, or Tagbanwa scripts.",
+    location: "Open Source Project",
+    link: "https://github.com/isaacdarcilla/filipino-script-translator",
+    links: [
+      {
+        "domain": "https://github.com/isaacdarcilla/filipino-script-translator",
+        "sub_domain": "Github Repository"
+      },
+      {
+        "domain": "https://www.npmjs.com/package/filipino-script-translator",
+        "sub_domain": "NPM Package"
+      },
+      {
+        "domain": "https://ohtranslate.vercel.app/",
+        "sub_domain": "Demonstration"
+      }
+    ],
+  },
+  {
+    name: "Currency Converter",
+    description: "An open-source project and Laravel package that offers a straightforward solution for converting currency values. This simple yet powerful package, written in PHP, allows seamless conversion of amounts into various currencies.",
+    location: "Open Source Project",
+    link: "https://github.com/isaacdarcilla/currency-amount-converter",
+    links: [
+      {
+        "domain": "https://github.com/isaacdarcilla/currency-amount-converter",
+        "sub_domain": "Github Repository"
+      },
+      {
+        "domain": "https://packagist.org/packages/currency-amount-converter/currency-amount-converter",
+        "sub_domain": "Composer Package"
+      }
+    ],
+  },
 ]
 
 export default function Page() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">my project</h1>
+      <p className="prose prose-neutral dark:prose-invert">
+        Over the years, I've navigated a diverse range of projects, honing my skills in strategic management and effective
+        communication. My involvement in projects and <a  href="https://github.com/isaacdarcilla" target="_blank">open source initiatives</a> adds a unique dimension to my experience, showcasing a
+        commitment to collaborative innovation and inclusive development.
+      </p>
       <div>
         {projects.map(item => (
           <>
