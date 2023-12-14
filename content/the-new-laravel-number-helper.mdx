@@ -1,0 +1,79 @@
+---
+title: 'The New Laravel Number Helper'
+publishedAt: '2023-12-14'
+summary: 'Let us dive to the new Laravel Number class'
+---
+
+### Introduction: Laravel Number Class
+
+In the realm of application development, the demand often arises for the nuanced formatting of numbers
+to meet diverse criteria, be it for displaying them as currency, percentages, or human-readable file sizes.
+Noticing a gap in Laravel's offerings for a specialized utility in this domain. This utility class, a culmination
+of dedicated work over a span of time, has now found its place within the framework, marking an
+exciting milestone. Let's explore the distinctive features it introduces.
+
+### The Laravel Number Class
+
+All methods are part of the class below:
+
+```php
+use Illuminate\Support\Number;
+```
+
+Harness the format method to seamlessly format numbers based on the current locale:
+
+```php
+Number::format(25) // 25
+Number::format(100000) // 100,000
+Number::format(123456789) // 123,456,789
+```
+
+Customize locale settings for precise formatting:
+
+```php
+Number::format(123456789, locale: 'en') // 123,456,789
+Number::format(123456789, locale: 'de') // 123.456.789
+Number::format(123456789, locale: 'sv') // 123 456 789
+```
+
+Utilize the `formatPercentage` method for easy percentage representation:
+
+```php
+Number::percentage(25)                         // 25%
+Number::percentage((1/3) * 100, precision: 2)  // 33.33%
+```
+
+Ideal for e-commerce applications, the `toCurrency` method provides seamless currency formatting with locale support:
+
+```php
+Number::toCurrency(10)                                   // $10.00
+Number::toCurrency(25, currency: 'EUR')                  // €25.00
+Number::toCurrency(5.49, currency: 'EUR', locale: 'de')  // 5.49 €
+```
+
+The `toFileSize` method, a pivotal feature, enables effortless conversion of file sizes:
+
+```php
+Number::toFileSize(1024)                    // 1 KB
+Number::toFileSize(1600, precision: 2)      // 1.56 KB
+Number::toFileSize(1024 * 1024 * 1024 * 5)  // 5 GB
+```
+
+For a more human-friendly representation, employ the `forHumans` method:
+
+```php
+Number::forHumans(1000)                 // 1 thousand
+Number::forHumans(12345)                // 12 thousand
+Number::forHumans(12345, precision: 3)  // 12.345 thousand
+```
+
+### Conclusion
+
+In conclusion, this Laravel Number utility class not only streamlines numeric formatting but also
+provides a flexible and powerful solution for a wide array of formatting needs. Whether you're
+dealing with general numbers, percentages, currencies, file sizes, or human-readable formats,
+this utility class offers a versatile toolkit to enhance the presentation of numerical data in
+your applications. Explore its capabilities and elevate the user experience with polished and
+contextually appropriate numeric displays.
+
+[Official Laravel Documentation](https://laravel.com/docs/10.x/helpers#numbers)
