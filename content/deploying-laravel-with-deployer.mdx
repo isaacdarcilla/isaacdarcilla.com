@@ -1,0 +1,129 @@
+---
+title: 'Deploying Laravel With Deployer'
+publishedAt: '2023-12-15'
+summary: 'Deployer is your go-to free and open-source deployment tool crafted in PHP'
+---
+
+I was knee-deep in a Laravel project, aiming for simplicity without the complexities of Docker. I craved a straightforward deployment solution that could seamlessly integrate with my workflow, and that's when Deployer entered the scene.
+
+Meet Deployer – a free and open-source deployment tool written in PHP, tailored for Laravel applications. It became my go-to solution for deploying without the hassle of intricate setups. Let me take you through the journey of how Deployer transformed my deployment process, making it not only simpler but also more efficient.
+
+### Key Features
+
+1. Provisioning:
+Effortlessly prepare your server for deployment with Deployer's provisioning feature. Let Deployer handle the server setup, so you can focus on what matters – your application.
+
+2. Zero Downtime Deployment:
+Say goodbye to downtime anxiety. Deployer empowers you to release your Laravel application without a hitch, ensuring a smooth transition for your users.
+
+3. Rollbacks:
+Mistakes happen, but with Deployer, you're covered. Enjoy the peace of mind that comes with the ability to roll back your application to a previous version in case of unforeseen issues.
+
+### Installation
+
+It's straightforward, you can install it globally or in your project by running:
+
+```sh
+composer require --dev deployer/deployer
+```
+
+And then to initialize deployer in your project:
+
+```sh
+vendor/bin/dep init
+```
+
+Deployer will ask you a few questions, and after finishing you will either have a **deploy.php** or **deploy.yaml** file. This is our deployment recipe. It contains hosts, tasks and requires other recipes. All framework recipes that come with Deployer are based on the common recipe.
+
+In my case, I've choosen **deploy.php**. Your deployer file may look something like this.
+
+```php
+<?php
+
+namespace Deployer;
+
+use Deployer\Exception\Exception;
+use Symfony\Component\Console\Output\OutputInterface;
+
+require 'recipe/laravel.php';
+
+set('application', 'yourappname');
+set('repository', 'git@github.com:isaacdarcilla/yourrepo.git');
+
+// You can add files and directory here
+// that can be included in the `shared` folder.
+add('shared_files', []);
+add('shared_dirs', []);
+add('writable_dirs', []);
+
+host('api.domain.co.nz')
+    ->set('remote_user', 'yourusername')
+    ->set('deploy_path', '~/container/application')
+    ->set('branch', 'main')
+    ->set('writable_mode', 'chmod')
+    ->set('ssh_multiplexing', false)
+    ->set('use_relative_symlink', true)
+    ->set('forward_agent', true)
+    ->set('shared_files', []) // If you want to set it to empty
+    ->set('keep_releases', 3);
+
+task('deploy', [
+    'deploy:prepare',
+    'deploy:vendors',
+    'artisan:storage:link',
+    'artisan:optimize',
+    'artisan:migrate',
+    'deploy:publish',
+]);
+
+// Hooks
+
+after('deploy:failed', 'deploy:unlock');
+```
+
+Our deploy.php recipe contains a host definition with a few important params:
+
+- remote_user the user name for the ssh connection,
+- deploy_path the file path on the host where we are going to deploy.
+
+Let's set `remote_user` to be deployer. Right now our new server probably only has the root user. The provision recipe will create and configure a deployer user for us.
+
+To connect to the remote host we need to specify an identity key or private key. We can add our identity key directly into the host definition, but it's better to put it in the `~/.ssh/config file`.
+
+### Deploy
+
+To deploy the project:
+
+```bash
+dep deploy
+```
+
+If deploy failed, Deployer will print an error message and which command was unsuccessful. Most likely we need to configure the correct database credentials in the `.env` file or similar.
+
+### Overriding Task Definitions
+
+Given all the task below, we can also override the script for each task.
+
+```php
+task('deploy', [
+    'deploy:prepare',
+    'deploy:vendors',
+    'artisan:storage:link',
+    'artisan:optimize',
+    'artisan:migrate',
+    'deploy:publish',
+]);
+```
+
+Task such as `deploy:prepare` can be overriden as well.
+
+```php
+task('deploy:prepare', function () {
+    // You custom PHP script here
+})
+```
+
+
+### Conclusion
+
+In the world of Laravel development, where simplicity is often the key to productivity, Deployer has proven to be a game-changer. As I navigated the challenges of deploying my Laravel project using Docker, Deployer emerged as the beacon of simplicity and efficiency.
