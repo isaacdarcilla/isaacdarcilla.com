@@ -25,7 +25,7 @@ export default function Page() {
           using React.js, TypeScript, PHP, Laravel, Shopify, Sanity CMS, and GraphQL. Responsibilities include writing clean,
           well-documented code, optimizing applications for speed and scalability,
           managing APIs, and ensuring responsive design across devices and browsers.
-          Collaboration with UI/UX teams is crucial for an intuitive user interface.
+          Collaboration with teams is crucial for an intuitive user interface.
           Additionally, the role includes troubleshooting, participating in code reviews,
           and staying updated on emerging technologies and industry trends.
         </p>

@@ -217,9 +217,9 @@ export default function Page() {
             <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
             <div className="flex justify-between items-start">
               <h2 className="font-medium text-xl mb-1 tracking-tighter">{item.name}</h2>
-              <a className="flex items-center hover:text-neutral-600 dark:hover:text-neutral-100 transition-all" href={item.link} target="_blank">
+              <a className="flex items-center hover:text-neutral-600 dark:hover:text-neutral-100 text-neutral-500 dark:text-neutral-400 transition-all" href={item.link} target="_blank">
                 <ArrowIcon/>
-                <p className="text-sm ml-1 text-neutral-300">project link</p>
+                <p className="text-sm ml-1 dark:hover:text-neutral-100">project link</p>
               </a>
             </div>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm -mt-1">
@@ -229,10 +229,10 @@ export default function Page() {
               {item.description}
             </p>
 
-            <ul className="flex flex-col mt-4 text-sm text-neutral-300 dark:text-neutral-400">
+            <ul className="flex flex-col mt-4 text-sm">
               {item.links.length > 0 && item.links.map(l => (
                 <li>
-                  <a className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all" rel="noopener noreferrer" target="_blank" href={l.domain}>
+                  <a className="flex items-center transition-all hover:text-neutral-600 dark:hover:text-neutral-100 text-neutral-500 dark:text-neutral-400" rel="noopener noreferrer" target="_blank" href={l.domain}>
                     <ArrowIcon/>
                     <p className="ml-1 text-sm">{l.sub_domain}</p>
                   </a>
