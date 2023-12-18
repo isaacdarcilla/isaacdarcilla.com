@@ -1,0 +1,203 @@
+---
+title: 'Abstracts, Final, Interface, Traits in PHP'
+publishedAt: '2023-12-18'
+summary: 'Differences of Final, Interfaces, Traits, and Abstract classes'
+---
+
+If you've been actively engaging with PHP, you've likely encountered Final, Interfaces, Traits, and Abstract classes.
+Initially, these constructs may seem somewhat similar, making it challenging to discern their distinctions and optimal use cases.
+By the conclusion of this article, you'll gain a clear understanding of their unique features, enabling you to confidently
+choose the most suitable option for a given scenario.
+
+- [Abstract Class](#abstract-class)
+- [Interface Class](#interface-class)
+- [Final Class](#final-class)
+- [Trait Class](#trait-class)
+
+## Abstract Class
+
+An abstract class closely resembles a regular class but includes abstract methods. Unlike an ordinary class, it
+cannot be instantiated independently. Abstract classes serve as excellent templates for classes that
+are expected to have a shared ancestor.
+
+Consider, for instance, classes such as `Cat` and `Dog`. These classes may share certain methods and functionalities.
+Creating a parent abstract class becomes beneficial in this scenario, allowing for the inclusion of shared methods while
+mandating the implementation of specific methods in the child classes. This ensures a structured and cohesive design for
+related classes.
+
+```php
+<?php
+
+abstract class Animal {
+    public function eat() {
+        echo "The animal is eating.";
+    }
+
+    abstract public function makeSound();
+}
+
+class Cat extends Animal {
+    public function makeSound() {
+        echo "Meow!";
+    }
+}
+
+class Dog extends Animal {
+    public function makeSound() {
+        echo "Woof!";
+    }
+}
+
+$cat = new Cat();
+$dog = new Dog();
+
+$cat->eat();
+$cat->makeSound();
+
+$dog->eat();
+$dog->makeSound();
+```
+
+Some takeaways about abstract classes:
+
+- Can't be instantiated on their own
+- Abstract methods just declare a signature and no functionality
+- Used by a child class with `extends` keyword
+- Act as a sort of partially-built class
+
+## Interface Class
+
+Interfaces serve as a mechanism to mandate particular implementations in classes that adopt them.
+These constructs exclusively consist of method signatures, devoid of any actual functionality.
+Their primary purpose is to establish a standardized structure and function as templates for constructing classes,
+emphasizing adherence to a predefined set of methods.
+
+```php
+<?php
+
+// Interface
+interface Shape {
+    public function calculateArea();
+}
+
+// Class implementing the interface
+class Circle implements Shape {
+    private $radius;
+
+    public function __construct($radius) {
+        $this->radius = $radius;
+    }
+
+    // Implementation of the interface method
+    public function calculateArea() {
+        return pi() * $this->radius * $this->radius;
+    }
+}
+
+// Class using the interface
+class Square implements Shape {
+    private $side;
+
+    public function __construct($side) {
+        $this->side = $side;
+    }
+
+    // Implementation of the interface method
+    public function calculateArea() {
+        return $this->side * $this->side;
+    }
+}
+
+// Usage
+$circle = new Circle(5);
+$square = new Square(4);
+
+echo "Circle Area: " . $circle->calculateArea();
+echo "Square Area: " . $square->calculateArea();
+```
+
+Some takeaways about interfaces:
+
+- Act as blueprints for classes
+- Used in the class declaration with `implements` keyword
+- Multiple can be used in the same class
+- Can only contain method signatures and no properties
+
+## Final Class
+
+A final class is a class that cannot be extended or subclassed. When a class is declared as final,
+it means that it is considered complete and should not be further modified or specialized by creating derived classes.
+This restriction is enforced by the language, and any attempt to extend a final class will result in a compilation or runtime error.
+
+```php
+<?php
+
+// Final Class
+final class FinalClass {
+    public function hello() {
+        echo "Hello from FinalClass!";
+    }
+}
+
+// Attempting to extend a final class will result in an error
+class ExtendedClass extends FinalClass {
+    // Error: Class ExtendedClass may not inherit from final class (FinalClass)
+}
+
+// Creating an instance of the final class
+$finalInstance = new FinalClass();
+$finalInstance->hello();
+```
+
+## Trait Class
+
+Traits provide a mechanism for code reuse across multiple classes, even when these classes are not inherently related.
+In contrast to abstract classes, a single class can incorporate multiple traits using the use statement.
+
+Traits are often employed to consolidate somewhat related methods and properties, seamlessly integrating additional
+functionality into the classes that utilize them. This flexibility allows developers to compose classes with a
+mix-and-match approach, bringing together diverse traits to meet specific needs.
+
+```php
+<?php
+
+// Trait
+trait Logging {
+    public function logMessage($message) {
+        echo "Logging: $message";
+    }
+}
+
+// Class using the trait
+class User {
+    use Logging;
+
+    public function performAction() {
+        // Using the method from the trait
+        $this->logMessage("Performed an action.");
+        // Additional class-specific functionality
+    }
+}
+
+// Creating an instance of the class
+$user = new User();
+$user->performAction();  // Outputs: Logging: Performed an action.
+```
+
+Some takeaways about traits:
+
+- Perfect for code reuse
+- Implemented in the class body with `use` keyword
+- Multiple can be used in the same class
+- Can have both properties and methods
+
+
+## Conclusion
+
+In conclusion, understanding the distinctions and applications of abstract classes, interfaces, and traits in PHP
+is essential for designing flexible and maintainable object-oriented code. Abstract classes serve as blueprints
+with shared functionality and enforced method implementations in subclasses. Interfaces define method contracts,
+ensuring adherence to a specific structure across diverse classes. Traits offer a unique way to reuse code in
+unrelated classes, allowing a class to incorporate multiple traits and tailor its functionality dynamically.
+The judicious use of these constructs empowers developers to create well-organized, extensible, and modular code,
+fostering a robust and scalable software architecture.
