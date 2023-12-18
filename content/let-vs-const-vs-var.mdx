@@ -1,0 +1,86 @@
+---
+title: 'Let vs. Const vs. Var'
+publishedAt: '2023-12-16'
+summary: 'What’s the difference between using let, const, and var in JavaScript?'
+---
+
+The keywords `let` and `var` serve as variable declarations in JavaScript. The distinction between them lies in the scope of the variables they introduce.
+
+## Let
+
+Variables declared with `let` are confined to the block in which they are defined, ensuring a limited scope for their accessibility.
+
+```js
+function exampleLetScope() {
+    if (true) {
+        let x = 10;
+        console.log(x); // Output: 10
+    }
+
+    // The following line would result in an error because 'x' is not defined here.
+    console.log(x); // Error: x is not defined
+}
+
+exampleLetScope();
+```
+
+In this example, the variable `x` is declared using let within the if block, and it is only accessible within that block.
+
+## Const
+
+The `const` keyword in JavaScript is used to declare constants, which are variables that cannot be reassigned after their initial assignment.
+
+```js
+function exampleConst() {
+    const PI = 3.14159;
+    console.log(PI); // Output: 3.14159
+
+    // The following line would result in an error because you cannot reassign a constant.
+    PI = 4; // Error: Assignment to constant variable
+}
+
+exampleConst();
+```
+
+It's important to note that while the value of a variable declared with `const` cannot be changed, but the properties of objects and arrays declared with `const` can be modified.
+The immutability applies to the variable reference, not the values it points to.
+
+```js
+function exampleConstArray() {
+    const numbers = [1, 2, 3];
+    console.log(numbers); // Output: [1, 2, 3]
+
+    // Modifying the array is allowed, as it's the array reference that is constant, not the values.
+    numbers.push(4);
+    console.log(numbers); // Output: [1, 2, 3, 4]
+
+    // The following line would result in an error because you cannot reassign 'numbers'.
+    numbers = [5, 6, 7]; // Error: Assignment to constant variable
+}
+
+exampleConstArray();
+```
+
+In this case, you can modify the content of the array (add elements), but you cannot assign a new array to the numbers variable.
+
+## Var
+
+Variables declared with `var` exhibit a broader scope, making them accessible throughout the entire function in which they are declared.
+
+```js
+function exampleVarScope() {
+    if (true) {
+        var y = 20;
+        console.log(y); // Output: 20
+    }
+
+    // 'y' is accessible outside the block, even though it was declared inside the 'if' block.
+    console.log(y); // Output: 20
+}
+
+exampleVarScope();
+```
+
+With `var`, the variable `y` is accessible both inside and outside the if block because `var` has a function-level scope, and the entire function is the scope in this case.
+
+In modern JavaScript, it's generally recommended to use `let` and `const` over `var` due to the more predictable block-level scope behavior they provide.
