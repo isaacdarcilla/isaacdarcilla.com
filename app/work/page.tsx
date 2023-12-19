@@ -48,7 +48,7 @@ export default function Page() {
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">HireTrades, Inc.</h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Software Engineer, Australia, Mar 2020 — Mar 2021
+          Fullstack Software Developer, Australia, Mar 2020 — Mar 2021
         </p>
         <p>
           I was involved in designing and developing business logic, maintaining and optimizing APIs for
@@ -62,7 +62,7 @@ export default function Page() {
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">Catanduanes State University</h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Computer Programmer, Philippines, Jun 2019 — Mar 2020
+          Fullstack Software Engineer, Philippines, Jun 2019 — Mar 2020
         </p>
         <p>
           The individual designed and developed multiple systems for various university departments,
@@ -71,6 +71,34 @@ export default function Page() {
           within application systems, ensuring successful implementation of system improvements, writing,
           modifying, integrating, and testing software codes, creating applications based on technical specifications,
           and providing ad hoc modules in response to end-user requests.
+        </p>
+
+        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">Vananaz Systems, Inc.</h2>
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          Fullstack Laravel Developer, Japan, Jan 2019 - Jun 2019
+        </p>
+        <p>
+          Innovate, develop, and sustain cutting-edge web-based PHP applications on portal and premium service platforms.
+          Collaborate closely with the User Experience (UX) team to construct state-of-the-art applications, ensuring the
+          validity and consistency of HTML, CSS, and shared JavaScript across all projects. Employ standard development
+          tools in the preparation and maintenance of applications, and actively contribute to the enhancement of existing data
+          services API through backend integration. Communicate effectively on task progress, evaluations, suggestions,
+          schedules, and technical/process issues.
+        </p>
+
+        <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">10X Philippines</h2>
+        <p className="text-neutral-600 dark:text-neutral-400 text-sm">
+          Fullstack Software Developer, Philippines, May 2018 - Jan 2019
+        </p>
+        <p>
+          Collaborate with product managers to conceive innovative software solutions,
+          architecting both client-side and server-side frameworks. Craft visually engaging front-end applications
+          while ensuring seamless integration with robust databases. Author effective APIs, conduct thorough
+          software testing for optimal responsiveness, and adeptly troubleshoot, debug, and upgrade software components.
+          Implement security and data protection protocols and construct mobile-responsive features and applications.
+          Additionally, contribute to technical documentation and collaborate with data scientists and analysts to enhance software functionality.
         </p>
       </div>
     </section>
