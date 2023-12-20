@@ -20,7 +20,15 @@ All methods are part of the class below:
 use Illuminate\Support\Number;
 ```
 
-Harness the format method to seamlessly format numbers based on the current locale:
+The `abbreviate` method returns the human-readable format of the provided numerical value:
+
+```php
+Number::abbreviate(1000);                  // 1K
+Number::abbreviate(489939);                // 490K
+Number::abbreviate(1230000, precision: 2); // 1.23M
+```
+
+Harness the `format` method to seamlessly format numbers based on the current locale:
 
 ```php
 Number::format(25)        // 25
@@ -43,20 +51,20 @@ Number::percentage(25)                         // 25%
 Number::percentage((1/3) * 100, precision: 2)  // 33.33%
 ```
 
-Ideal for e-commerce applications, the `toCurrency` method provides seamless currency formatting with locale support:
+Ideal for e-commerce applications, the `currency` method provides seamless currency formatting with locale support:
 
 ```php
-Number::toCurrency(10)                                   // $10.00
-Number::toCurrency(25, currency: 'EUR')                  // €25.00
-Number::toCurrency(5.49, currency: 'EUR', locale: 'de')  // 5.49 €
+Number::currency(10)                                   // $10.00
+Number::currency(25, currency: 'EUR')                  // €25.00
+Number::currency(5.49, currency: 'EUR', locale: 'de')  // 5.49 €
 ```
 
-The `toFileSize` method, a pivotal feature, enables effortless conversion of file sizes:
+The `fileSize` method, a pivotal feature, enables effortless conversion of file sizes:
 
 ```php
-Number::toFileSize(1024)                    // 1 KB
-Number::toFileSize(1600, precision: 2)      // 1.56 KB
-Number::toFileSize(1024 * 1024 * 1024 * 5)  // 5 GB
+Number::fileSize(1024)                    // 1 KB
+Number::fileSize(1600, precision: 2)      // 1.56 KB
+Number::fileSize(1024 * 1024 * 1024 * 5)  // 5 GB
 ```
 
 For a more human-friendly representation, employ the `forHumans` method:
