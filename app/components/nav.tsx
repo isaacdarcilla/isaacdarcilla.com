@@ -4,6 +4,8 @@ import { motion, LayoutGroup } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { Suspense } from 'react';
 import Link from 'next/link';
+import Lottie from "react-lottie-player";
+import lottieJson from "../../public/animation/deco.json";
 
 const navItems = {
   '/': {
@@ -23,7 +25,14 @@ const navItems = {
 export function Navbar() {
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
-      <div className="lg:sticky lg:top-20">
+      <div className="lg:sticky lg:top-20 relative">
+        <Lottie
+          loop
+          animationData={lottieJson}
+          play
+          className="absolute -top-16 right-10"
+          style={{ width: 200, height: 200 }}
+        />
         <LayoutGroup>
           <div className="flex items-center justify-between">
             <nav

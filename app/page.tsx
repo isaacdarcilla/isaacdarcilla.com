@@ -1,10 +1,23 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import Lottie from "react-lottie-player";
+import lottieJson from "../public/animation/hat.json";
 
 export default function Page() {
   return (
     <section>
-      <Image src="/avatar.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
+      <div className="relative">
+        <Image src="/avatar.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
+        <Lottie
+          loop
+          animationData={lottieJson}
+          play
+          className="absolute -top-10 -left-12"
+          style={{ width: 150, height: 150 }}
+        />
+      </div>
       <h1 className="font-medium text-2xl mb-6 tracking-normal">isaac d. arcilla</h1>
       <p className="prose prose-neutral dark:prose-invert">
         I'm a fullstack developer, optimist, and open-source contrubitor.
