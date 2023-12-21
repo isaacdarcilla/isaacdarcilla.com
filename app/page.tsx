@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <div className="relative">
-        <Image src="/avatar.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
+        <Image src="/avatar-blue.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
         <Lottie
           loop
           animationData={lottieJson}
