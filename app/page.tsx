@@ -19,9 +19,8 @@ export default function Page() {
         />
       </div>
       <h1 className="font-medium text-2xl mb-6 tracking-normal">isaac d. arcilla</h1>
-      <p className="prose prose-neutral dark:prose-invert">
+      <p>
         I'm a fullstack developer, optimist, and open-source contrubitor.
-        I currently <Link href="/work">work</Link> as the Senior Software Engineer at <Link href="/work">Doodl</Link>, a New Zealand based company.
         I have five years of experience in web development, working with various frameworks, languages, and tools.
         I have proven expertise in developing and maintaining high-quality web applications, using technologies
         such as
@@ -47,7 +46,7 @@ export default function Page() {
         </Link> and much more.
       </p>
 
-      <p  className="prose prose-neutral dark:prose-invert mt-4"> I enjoy dedicating my free time to various pursuits, including crafting engaging blog posts, contributing to open-source projects, coding, and indulging in the serene pastime of fishing.</p>
+      <p  className="prose prose-neutral dark:prose-invert mt-4"> I enjoy dedicating my free time to various pursuits, including crafting <Link href="/blog">engaging blog posts</Link>, contributing to <Link href="https://www.github.com/isaacdarcilla" target="_blank">open-source projects</Link>, coding, and indulging in the serene pastime of fishing.</p>
 
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
