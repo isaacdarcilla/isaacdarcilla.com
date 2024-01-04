@@ -9,14 +9,14 @@ export default function Page() {
   return (
     <section>
       <div className="relative">
-        <Image src="/avatar-blue.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
-        <Lottie
-          loop
-          animationData={lottieJson}
-          play
-          className="absolute -top-10 -left-12"
-          style={{ width: 150, height: 150 }}
-        />
+        <Image src="/avatar.png" width={60} height={60} alt="Avatar" className="mb-6 rounded-md" />
+        {/*<Lottie*/}
+        {/*  loop*/}
+        {/*  animationData={lottieJson}*/}
+        {/*  play*/}
+        {/*  className="absolute -top-10 -left-12"*/}
+        {/*  style={{ width: 150, height: 150 }}*/}
+        {/*/>*/}
       </div>
       <h1 className="font-medium text-2xl mb-6 tracking-normal">isaac d. arcilla</h1>
       <p>
@@ -46,7 +46,7 @@ export default function Page() {
         </Link> and much more.
       </p>
 
-      <p  className="prose prose-neutral dark:prose-invert mt-4"> I enjoy dedicating my free time to various pursuits, including crafting <Link href="/blog">engaging blog posts</Link>, contributing to <Link href="https://www.github.com/isaacdarcilla" target="_blank">open-source projects</Link>, coding, and indulging in the serene pastime of fishing.</p>
+      <p  className="prose prose-neutral dark:prose-invert mt-4"> I enjoy dedicating my free time to various pursuits, including crafting <Link href="/blog">engaging blog posts</Link>, contributing to <Link href="https://www.github.com/isaacdarcilla" target="_blank">open-source projects</Link>, coding, rollerblading, and indulging in the serene pastime of fishing.</p>
 
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
